@@ -1,0 +1,50 @@
+
+.directory-item-container {
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 0.5px solid #15203c;
+    &-image {
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+    }
+    &-content {
+        color: white;
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color : hsla(223, 48%, 16%, 0.1);
+        width: 120px;
+        height: 100px;
+        & h2 {
+            margin: 0;
+            font-size : 26px;
+            font-weight : 700;
+
+        }
+        & p {
+            margin: 0;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: .5px solid hsla(223, 48%, 16%, 0.3);
+        border-radius: 10px;
+        gap: 10px;
+        &:hover {
+            background-color:  hsla(223, 48%, 16%, 0.5);
+            color : #EDEDED;
+        }
+        & p:hover {
+            background-color : #16213E;
+            transform: scale(1.075);
+        }
+    }
+}
