@@ -8,7 +8,7 @@ function Navigation (){
         <>
         <NavigationBar>
         <NavigationContainer>
-            <Logo>OutFitter</Logo>
+            <Logo>GENZOUTFIT</Logo>
             <NavLinks>
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to='/'>Shop</NavLink>

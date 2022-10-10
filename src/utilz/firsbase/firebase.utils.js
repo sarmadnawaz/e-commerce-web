@@ -4,9 +4,10 @@ import {
   signInWithRedirect,
   signInWithPopup,
   GoogleAuthProvider,
+  createUserWithEmailAndPassword,
 } from "firebase/auth";
 
-import { getFirestore, doc, getDoc, setDoc} from 'firebase/firestore'
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_CONFIG_APIKEY,
@@ -19,55 +20,48 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const provider = new GoogleAuthProvider();
-provider.setCustomParameters({
-    prompt : "select_account"
-})
-
-const auth = getAuth();
-const signInWithGooglePopup = () => signInWithPopup(auth, provider)
-
-
 const db = getFirestore();
+const provider = new GoogleAuthProvider();
+const auth = getAuth();
 
-const createUserDocumentFromAuth = async(userAuth) => {
-    const userDocRef = doc(db, 'users', `${userAuth.uid}`)
-    // check it if user already exist
-    const userSnapshot = await getDoc(userDocRef);
-    // if user does not exist
-    if(!userSnapshot.exists()){
-        const  { displayName , email } = userAuth;
-        const createdAt = new Date();
-        try{
-            await setDoc(userDocRef, {
-                displayName, email, createdAt
-            });
-        }catch(error){
-            console.log('error creating the user document', error.message)
-        }
+provider.setCustomParameters({
+  prompt: "select_account",
+});
+
+const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+const signInWithGoogleRedirect = () => signInWithRedirect(auth, provider);
+const createAuthUserWithEmailAndPassword = async (email, password) => {
+  if (!email || !password) return;
+  return await createUserWithEmailAndPassword(auth, email, password);
+};
+
+const createUserDocumentFromAuth = async (userAuth, additionalInfo = {}) => {
+  const userDocRef = doc(db, "users", `${userAuth.uid}`);
+  // check it if user already exist
+  const userSnapshot = await getDoc(userDocRef);
+  // if user does not exist
+  if (!userSnapshot.exists()) {
+    const { displayName, email } = userAuth;
+    const createdAt = new Date();
+    try {
+      await setDoc(userDocRef, {
+        displayName,
+        email,
+        createdAt,
+        ...additionalInfo
+      });
+    } catch (error) {
+      console.log("error creating the user document", error.message);
     }
-    // if user exist then do nothing
-    return userDocRef
-}
+  }
+  // if user exist then do nothing
+  return userDocRef;
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export { auth, signInWithGooglePopup, createUserDocumentFromAuth }
+export {
+  auth,
+  signInWithGooglePopup,
+  createUserDocumentFromAuth,
+  signInWithGoogleRedirect,
+  createAuthUserWithEmailAndPassword,
+};
