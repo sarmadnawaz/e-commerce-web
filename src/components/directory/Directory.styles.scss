@@ -6,3 +6,25 @@
     grid-template-rows: repeat(2, 1fr) ;
     gap : 20px
 }
+
+// @media only screen and (max-width: 768px) {
+//     .directory-container {
+//         margin: 20px;
+//         height: 100vh;
+//         display: grid;
+//         grid-template-columns: 1fr 1fr;
+//         grid-template-rows: repeat(3, 1fr) ;
+//         gap : 20px
+//     }
+// }
+
+// @media only screen and (max-width: 400px) {
+//     .directory-container {
+//         margin: 20px;
+//         height: 100vh;
+//         display: grid;
+//         grid-template-columns: 1fr;
+//         grid-template-rows: repeat(6, 300px) ;
+//         gap : 20px
+//     }
+// }

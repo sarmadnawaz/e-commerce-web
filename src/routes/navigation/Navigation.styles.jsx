@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const NavigationBar = styled.div`
     width: 100%;
@@ -30,7 +31,7 @@ export const NavLinks = styled.div`
     gap: 20px;
 
 `
-export const NavLink = styled.a`
+export const NavLink = styled(Link)`
     font-size: 18px;
     font-weight : 600;
     text-decoration : none;
