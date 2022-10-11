@@ -23,6 +23,7 @@ export const Logo = styled.p`
     margin : 0;
     padding : 0;
     font-family: 'Arizonia', cursive;
+
 `
 export const NavLinks = styled.div`
     display : flex;
