@@ -2,7 +2,7 @@ import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Directory from './components/directory/Directory.component';
 import Navigation from './routes/navigation/Navigation.component';
-import SignIn from './routes/sign-in/SignIn.component';
+import Authentication from './routes/authentication/Authentication.component';
 
 
 const router = createBrowserRouter([
@@ -15,13 +15,17 @@ const router = createBrowserRouter([
         element : <Directory />
       },
       {
-        path : '/signIn',
-        element : <SignIn />
+        path : 'auth',
+        element : <Authentication />
       },
       {
         path : 'about',
         element : <h1>About Page</h1>
-      }
+      },
+      {
+        path : '*',
+        element : <h1>Page Not Found 404!</h1>
+      } 
     ]
   }
 ])

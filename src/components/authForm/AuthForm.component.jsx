@@ -1,5 +1,6 @@
-import { useState } from "react";
-import './SignUpForm.styles.scss'
+import { useReducer } from "react";
+import './AuthForm.styles.scss'
+
 
 const defaultFormFields = {
   displayName: "",
@@ -8,66 +9,68 @@ const defaultFormFields = {
   confirmPassword: "",
 };
 
-const SignUpForm = ({ onSubmitHandler, type = 'signup' }) => {
-  const [formFields, setFormFields] = useState(defaultFormFields);
+const reducer = (state, action) => ({
+    ...state,
+    ...action
+})
+
+const AuthForm = ({ onSubmitHandler, type = 'signup' }) => {
+
+  const [formFields, setFormFields] = useReducer(reducer, defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormFields({ ...formFields, [name]: value });
+    setFormFields({ [name]: value });
   };
 
   async function handleformSubmit(e) {
     e.preventDefault();
-    if(type === 'signup'){
-      if (password !== confirmPassword) {
+    if(type === 'signup' && password !== confirmPassword){
       alert("password doesn't match with confirm passowrd");
       return
-      }
     }
-    onSubmitHandler(formFields);
-    setFormFields(defaultFormFields);
+    onSubmitHandler(formFields).then(
+      () => setFormFields(defaultFormFields),
+      (error) => {}
+    )  
   }
 
   return (
-    <div className="sign-up-form-container">
+    <div className="auth-form-container">
       <h1>{type === 'signin' ? 'Already have an account' :  "Don't have an account"}</h1>
       <h2>{type === 'signin' ? 'Sign in' : 'Sign up'} with your email and password</h2>
-      <form className="sign-up-form" onSubmit={handleformSubmit}>
-        {/* <label>Display Name</label> */}
+      <form className="auth-form" onSubmit={handleformSubmit}>
         {type === 'signup' && <input
           type="text"
           name="displayName"
           value={displayName}
           onChange={handleChange}
-          requried
+          required={true}
           placeholder="display name"
         />}
-        {/* <label>Email</label> */}
         <input
           type="email"
           name="email"
           value={email}
           onChange={handleChange}
-          requried
+          required={true}
           placeholder="email"
         />
-        {/* <label>Password</label> */}
         <input
           type="password"
           name="password"
           value={password}
           onChange={handleChange}
-          requried
+          required={true}
           placeholder="password"
         />
-        {/* <label>Confirm Password</label> */}
         {type === 'signup' && <input
           type="password"
           name="confirmPassword"
           value={confirmPassword}
           onChange={handleChange}
-          requried
+          required={true}
           placeholder="confirm password"
         />}
         <button type="submit">{type === 'signin' ? 'Sign In' : 'Sign Up'}</button>
@@ -76,4 +79,4 @@ const SignUpForm = ({ onSubmitHandler, type = 'signup' }) => {
   );
 };
 
-export default SignUpForm;
+export default AuthForm;

@@ -11,8 +11,8 @@ function Navigation (){
             <Logo>GENZOUTFIT</Logo>
             <NavLinks>
                 <NavLink to='/'>Home</NavLink>
-                <NavLink to='/'>Shop</NavLink>
-                <NavLink to='/SignIn'>Sign In</NavLink>
+                <NavLink to='/about'>Shop</NavLink>
+                <NavLink to='/auth'>Sign In</NavLink>
             </NavLinks>
         </NavigationContainer>
         </NavigationBar>
