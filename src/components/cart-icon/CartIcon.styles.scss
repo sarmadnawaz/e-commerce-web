@@ -1,0 +1,17 @@
+.cart-icon-container {
+    position: relative;
+    cursor: pointer;
+}
+.cart-icon {
+    width: 40px;
+}
+.cart-quantity {
+    position:absolute;
+
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);   
+}
+.hidden {
+    display: none;
+}

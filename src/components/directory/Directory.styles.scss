@@ -1,11 +1,91 @@
-.directory-container {
-    margin: 20px;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(2, 1fr) ;
-    gap : 20px
+.directory{
+    box-sizing: border-box;
+    height: 85vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 40px;
 }
+.container-center {
+    width: 50%;
+    height: 96%;
+    display: flex;
+    justify-content: center;
+}
+.directory-details{
+    box-sizing: border-box;
+    width: 80%;
+    height: 100%;
+    padding-top: 70px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.directory-details h1 {
+    color: #000;
+    font-size: 36px;
+    font-weight: 700;
+    align-self: flex-start;
+}
+.directory-details p {
+    color : #000;
+    font-size: 18px;
+    font-weight: 500;
+    align-self: flex-start;
+}
+.directory-nav {
+   align-self: flex-start;
+   display: flex;
+   align-items: center;
+   margin-top: auto;
+   gap: 5%; 
+
+}
+.directory-nav-link { 
+    font-size: 18px;
+    font-weight : 600;
+    text-decoration : none;
+    color: #000;
+    transition: all 1s;
+}
+
+.directory-nav-link:hover { 
+    transform: scale(1.2);
+}
+
+.directory-container {
+    width: 50%;
+    height: 95%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    box-shadow: 5px 5px 5px 1px #000;
+
+}
+
+.directory-container div:nth-child(1){
+    grid-column: 1/4;
+    grid-row: 1/5;
+}
+.directory-container div:nth-child(2){
+    grid-column:  4 / 8 ;
+    grid-row : 1 / 5
+}
+
+.directory-container div:nth-child(3){
+    grid-column:   1 / 8;
+    grid-row : 5 / 11
+}
+.directory-container div:nth-child(4){
+    grid-column: 8 / 11;
+    grid-row: 1 / 4
+}
+.directory-container div:nth-child(5){
+    grid-column:  8 / -1 ;
+    grid-row : 4 / 11
+}
+
 
 // @media only screen and (max-width: 768px) {
 //     .directory-container {

@@ -1,0 +1,21 @@
+.shop-products-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    row-gap: 20px;
+    margin: 20px 0;
+}
+
+@media only screen and (max-width: 1300px) {
+    .shop-products-container {
+        grid-template-columns: repeat(3, 1fr) ;
+        gap : 20px
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .shop-products-container {
+        grid-template-columns: repeat(2, 1fr) ;
+        gap : 20px
+    }
+}

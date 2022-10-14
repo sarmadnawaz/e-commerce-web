@@ -1,20 +1,31 @@
 
 .directory-item-container {
+    overflow: hidden;
     box-sizing: border-box;
     position: relative;
-    border-radius: 0.5px solid #15203c;
+    width: 100%;
+    height: 100%;
+    color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     &-image {
         height: 100%;
         width: 100%;
         background-size: cover;
+        background-repeat: no-repeat;
+        transition: all 1s;
+    }
+    &-image:hover{
+        transform: scale(1.2);
     }
     &-content {
-        color: white;
+        color: #f4f4f4;
         position:absolute;
+        background-color: hsla(0, 0%, 20%, 0.7);
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color : hsla(223, 48%, 16%, 0.1);
         width: 120px;
         height: 100px;
         & h2 {
@@ -35,15 +46,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        border: .5px solid hsla(223, 48%, 16%, 0.3);
         border-radius: 10px;
         gap: 10px;
-        &:hover {
-            background-color:  hsla(223, 48%, 16%, 0.5);
-            color : #EDEDED;
-        }
         & p:hover {
-            background-color : #16213E;
             transform: scale(1.075);
         }
     }

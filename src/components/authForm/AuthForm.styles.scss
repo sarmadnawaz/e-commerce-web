@@ -1,6 +1,6 @@
 .auth-form-container {
     box-sizing: border-box;
-    color: #0F3460;
+    color: #000;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,20 +31,19 @@
         border: none;
         font-size: 18px;
         padding: 5px 5px;
-        border-radius: 5px;
-        background-color: #0F3460;
-        color: #EDEDED;
+        border-bottom : 1px solid black;
+        color: #000;
     }
     button {
         font-size: 18px;
         padding: 5px 10px;
         border: none;
         color : #EDEDED;
-        background-color: #0F3460;
+        background-color: #000;
         border-radius: 5px;
     }
     button:hover {
-        background-color: #16213E;
+        background-color: #000;
         transform: scale(1.075);
     }
 }

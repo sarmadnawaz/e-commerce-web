@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 
 export const NavigationBar = styled.div`
     width: 100%;
-    background-color : #0F3460;
-    color: #EDEDED;
+    color: #000;
     display: flex;
     justify-content: center;
-    padding : 10px 0px
+    padding : 10px 0px;
+    border-bottom : 0.5px solid black
 `
 
 export const NavigationContainer = styled.div`
@@ -17,13 +17,9 @@ export const NavigationContainer = styled.div`
     height : 70px
     margin-bottom : 25px
 `
-export const Logo = styled.p`
-    font-size : 48px;
-    font-weight : 700;
-    margin : 0;
-    padding : 0;
-    font-family: 'Arizonia', cursive;
-
+export const Logo = styled.img` 
+    width : 280px;    
+    height : 55px;
 `
 export const NavLinks = styled.div`
     display : flex;
@@ -36,11 +32,12 @@ export const NavLink = styled(Link)`
     font-size: 18px;
     font-weight : 600;
     text-decoration : none;
-    color: #EDEDED;
-    padding : 5px 10px;
+    color: #000;
+    padding : 10px 25px;
     border-radius : 5px;
     &:hover{
-        background-color : #16213E;
+        color: #EDEDED;
+        background-color : #1a1a1a;
         transform : scale(1.075);
     }
 `

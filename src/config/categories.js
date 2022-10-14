@@ -11,12 +11,12 @@ export default [
       imageUrl: 'https://images.pexels.com/photos/9638824/pexels-photo-9638824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       route: 'shop/jackets',
     },
-    {
-      id: 3,
-      title: 'sneakers',
-      imageUrl: 'https://images.pexels.com/photos/2300334/pexels-photo-2300334.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      route: 'shop/sneakers',
-    },
+    // {
+    //   id: 3,
+    //   title: 'sneakers',
+    //   imageUrl: 'https://images.pexels.com/photos/2300334/pexels-photo-2300334.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    //   route: 'shop/sneakers',
+    // },
     {
       id: 4,
       title: 'womens',

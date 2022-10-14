@@ -1,16 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.scss';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { UserProvider } from './context/user.context';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.scss";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { UserProvider } from "./context/user.context";
+import { ProductsProvider } from "./context/products.context";
+import CartProvider from "./context/cart.context";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <CartProvider>
     <UserProvider>
-    <App />
+      <ProductsProvider>
+        <App />
+      </ProductsProvider>
     </UserProvider>
+    </CartProvider>
   </React.StrictMode>
 );
 
